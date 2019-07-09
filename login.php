@@ -1,3 +1,8 @@
+<?php require_once("controls/clsDatabase.php"); ?>
+<?php require_once("controls/clsUserDetail.php"); ?>
+<?php 
+$objL = new userDetails();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,21 +12,34 @@
 <body>
 <?php require_once("include/menuBar.php"); ?>
 
-<div class="jumbotron">
-	<div class="container">
-		<h1>Welcome to Online Shop</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	</div>
-</div>
+<br/><br/>
+<br/><br/>
+<br/><br/>
 <div class="container">
+<?php
+if (isset($_POST['login'])) {
+	$res = $objL->validateUser($_POST['username'], $_POST['password']);
+	if ($res) {
+		$nor = $res->num_rows;
+		if ($nor > 0) {
+			$row = $res->fetch_array();
+			if ($row[1] == $_POST['username'] AND $row[2] == $_POST['password']) {
+				echo "Login Sccessfull";
+				$_SESSION['fullname'] = $row[3];
+				$_SESSION['uid'] = $row[0];
+				header("location: dashboard/dashboard.php");
+			} else {
+				echo "Please check your Username Or Password !";
+			}
+		} else {
+			echo "Please check your Username Or Password !";
+		}
+	}
+}
+?>
 	<h2>Login Page</h2>
 	<hr>
-	<form>
+	<form method="post">
 		<div class="form-group">
 			<label class="control-label">Username</label>
 			<input type="text" name="username" class="form-control">
