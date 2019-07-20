@@ -26,12 +26,12 @@ $objProd = new prodDetails();
 <div class="container">
 <?php
 // echo $_GET['prodUID'];
-if(isset($_POST['create'])) {
-	$res = $objProd->prodInsert($_POST['prodName'], $_POST['prodPrice'], $_POST['prodModal'], $_POST['prodSpec']);
+if(isset($_POST['update'])) {
+	$res = $objProd->updateProduct($_POST['prodName'], $_POST['prodPrice'], $_POST['prodModal'], $_POST['prodSpec'], $_GET['prodUID']);
 	if ($res) { ?>
-	<div class="alert alert-success alert-dismissible" role="alert">
+	<div class="alert alert-warning alert-dismissible" role="alert">
 	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	<strong>Success!</strong> Record Inserted.
+	<strong>Success!</strong> Product Details Updated.
 	</div> 
 	<?php 
 	}
@@ -39,25 +39,29 @@ if(isset($_POST['create'])) {
 ?>
 	<h2>Product Page</h2>
 	<hr>
+	<?php
+		$res = $objProd->showProdByID($_GET['prodUID']);
+		$row = $res->fetch_array();
+	?>
 	<form method="post">
 		<div class="form-group">
 			<label class="control-label">Product Fullname</label>
-			<input type="text" name="prodName" class="form-control">
+			<input type="text" name="prodName" class="form-control" value="<?php echo $row[1]; ?>">
 		</div>
 		<div class="form-group">
 			<label class="control-label">Product Price</label>
-			<input type="text" name="prodPrice" class="form-control">
+			<input type="text" name="prodPrice" class="form-control" value="<?php echo $row[2]; ?>">
 		</div>
 		<div class="form-group">
 			<label class="control-label">Product Modal Number</label>
-			<input type="text" name="prodModal" class="form-control">
+			<input type="text" name="prodModal" class="form-control" value="<?php echo $row[3]; ?>">
 		</div>
 		<div class="form-group">
 			<label class="control-label">Product Specification</label>
-			<textarea class="form-control" name="prodSpec"></textarea>
+			<textarea class="form-control" name="prodSpec"><?php echo $row[4]; ?></textarea>
 		</div>
 		<div class="form-group">
-			<input type="submit" name="create" value="Create" class="btn btn-info">
+			<input type="submit" name="update" value="Update" class="btn btn-info">
 			<input type="button" value="Back" class="btn btn-primary" onclick="window.location='product.php'">
 		</div>
 	</form>
