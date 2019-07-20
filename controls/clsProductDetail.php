@@ -10,13 +10,17 @@ class prodDetails
 		$sql = "INSERT INTO `product`(`prodName`, `prodPrice`, `prodModal`, `prodSpec`) VALUES ('$prodName', '$prodPrice', '$prodModal', '$prodSpec')";
 		return $mysqli->query($sql);
 	}
-	public function countProduct()
-	{
+	public function countProduct()	{
 		$mysqli = new mysqli(SERVERNAME, USERNAME, PASSWORD, DATABASE);
 		$sql = "SELECT count(*) FROM `product`";
 		$res =  $mysqli->query($sql);
 		$row = $res->fetch_array();	
 		return $row[0];
+	}
+	public function showAllProduct()	{
+		$mysqli = new mysqli(SERVERNAME, USERNAME, PASSWORD, DATABASE);
+		$sql = "SELECT * FROM `product`";
+		return $res =  $mysqli->query($sql);
 	}
 }
 ?>
