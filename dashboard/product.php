@@ -43,7 +43,7 @@
 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-				<td><a href="" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				<td><a href="prodUpdate.php" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a></td>
 				<td><a href="" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></td>
 			</tr>
 			<tr>
