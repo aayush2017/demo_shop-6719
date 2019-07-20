@@ -19,9 +19,12 @@ $objL = new userDetails();
 <?php
 if (isset($_POST['signup'])) {
 	$res = $objL->createUser($_POST['username'], $_POST['password'], $_POST['fullname'], $_POST['mobile'], $_POST['address']);
-	if ($res) {
-		echo "User Created !";
-	}
+	if ($res) { ?>
+	<div class="alert alert-success alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<strong>Success!</strong> User Created.
+	</div>
+	<?php }
 }
 ?>
 	<h2>Signup Page</h2>

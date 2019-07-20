@@ -24,15 +24,25 @@ if (isset($_POST['login'])) {
 		if ($nor > 0) {
 			$row = $res->fetch_array();
 			if ($row[1] == $_POST['username'] AND $row[2] == $_POST['password']) {
-				echo "Login Sccessfull";
-				$_SESSION['fullname'] = $row[3];
+				echo "Login Sccessfull"; ?>
+				<div class="alert alert-success alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<strong>Login Success!</strong></div>
+				<?php $_SESSION['fullname'] = $row[3];
 				$_SESSION['uid'] = $row[0];
 				header("location: dashboard/dashboard.php");
 			} else {
-				echo "Please check your Username Or Password !";
+				echo "Please check your Username Or Password !";?>
+			<div class="alert alert-danger alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<strong>Failed !</strong> Please check your Username Or Password !</div>
+				<?php
 			}
-		} else {
-			echo "Please check your Username Or Password !";
+		} else { ?>
+			<div class="alert alert-danger alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<strong>Failed !</strong> Please check your Username Or Password !</div>
+			<?php
 		}
 	}
 }

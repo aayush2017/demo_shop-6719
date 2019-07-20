@@ -27,8 +27,12 @@ $objProd = new prodDetails();
 <?php
 if(isset($_POST['create'])) {
 	$res = $objProd->prodInsert($_POST['prodName'], $_POST['prodPrice'], $_POST['prodModal'], $_POST['prodSpec']);
-	if ($res) {
-		echo "Product Inserted !";
+	if ($res) { ?>
+	<div class="alert alert-success alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<strong>Success!</strong> Record Inserted.
+	</div> 
+	<?php 
 	}
 }
 ?>
@@ -53,6 +57,7 @@ if(isset($_POST['create'])) {
 		</div>
 		<div class="form-group">
 			<input type="submit" name="create" value="Create" class="btn btn-info">
+			<input type="button" value="Back" class="btn btn-primary" onclick="window.location='product.php'">
 		</div>
 	</form>
 </div>

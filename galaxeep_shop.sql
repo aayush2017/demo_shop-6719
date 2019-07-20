@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2019 at 11:30 AM
+-- Generation Time: Jul 20, 2019 at 08:47 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -42,7 +42,31 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id`, `prodName`, `prodPrice`, `prodModal`, `prodSpec`) VALUES
 (1, 'Dell Monitor', '25000', 'D1001', 'N/a'),
-(2, 'ClassMate', '100', 'CM1001', 'n/a');
+(2, 'ClassMate', '100', 'CM1001', 'n/a'),
+(3, '', '', '', ''),
+(4, 'Lenovo Phon', '1000', 'LP1001', 'N/A');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `signup`
+--
+
+CREATE TABLE `signup` (
+  `id` int(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `mobile` varchar(255) NOT NULL,
+  `address` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `signup`
+--
+
+INSERT INTO `signup` (`id`, `username`, `password`, `fullname`, `mobile`, `address`) VALUES
+(1, 'john', '123456', 'John Corter', '996858585', 'OLD DLF Colony');
 
 --
 -- Indexes for dumped tables
@@ -55,6 +79,12 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `signup`
+--
+ALTER TABLE `signup`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -62,7 +92,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `signup`
+--
+ALTER TABLE `signup`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

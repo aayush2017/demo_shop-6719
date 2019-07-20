@@ -2,28 +2,10 @@
 <html>
 <head>
 	<title>Product</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<?php require_once("include/header.php"); ?>
 </head>
 <body>
-<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
-<div class="container">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a href="" class="navbar-brand">Shop</a>
-</div>
-<div class="collpase navbar-collapse" id="example">
-<ul class="nav navbar-nav">
-<li><a href="login.php">Login</a></li>
-<li><a href="signup.php">Signup</a></li>
-<li><a href="product.php">Product</a></li>
-</ul>
-</div>
-</div>
-</div>
+<?php require_once("include/menuBar.php"); ?>
 
 <div class="jumbotron">
 	<div class="container">
@@ -109,7 +91,6 @@
 		</tbody>
 	</table>
 </div>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<?php require_once("include/footer.php"); ?>
 </body>
 </html>

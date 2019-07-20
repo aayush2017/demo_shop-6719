@@ -13,8 +13,8 @@
 <li><a href="product.php">Product</a></li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
-<li><a href=""><img src="../upload/userPic/chat-avatar2.jpg" alt="../upload/userPic/chat-avatar2.jpg" class="proPic"></a></li>
-<li><a href="">UserName</a></li>
+<li><a href="profile.php"><img src="../upload/userPic/chat-avatar2.jpg" alt="../upload/userPic/chat-avatar2.jpg" class="proPic"></a></li>
+<li><a href="profile.php"><?php echo $_SESSION['fullname']; ?></a></li>
 <li><a href="logout.php">Logout</a></li>
 </ul>
 </div>

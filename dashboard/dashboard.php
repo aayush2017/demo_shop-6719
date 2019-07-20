@@ -17,7 +17,7 @@ $objL = new UserDetails();
 	<h1>Dashboard</h1>	
 </div>
 <div class="container">
-	<button class="btn btn-info">Total Product <span class="badge"><?php echo $objL->countUser();  ?></span></button>
+	<button class="btn btn-info">Total Product <span class="badge"><?php echo $objP->countProduct();  ?></span></button>
 	<button class="btn btn-primary">Total User <span class="badge"><?php echo $objL->countUser();  ?></span></button>
 </div>
 <?php require_once("include/footer.php"); ?>
