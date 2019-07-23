@@ -1,7 +1,8 @@
-<?php 
-$mysqli=new mysqli("localhost","root", "","shop"); 
+<?php require_once("controls/clsDatabase.php"); ?>
+<?php require_once("controls/clsProductDetail.php"); ?>
+<?php  
+$objP = new prodDetails();
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,8 +35,7 @@ $mysqli=new mysqli("localhost","root", "","shop");
 
 
 <?php
-$sql = "SELECT * FROM `product`";
-$res = $mysqli->query($sql);
+$res = $objP->showAllProduct();
 
 while ($rows = $res->fetch_array()) {
 ?>

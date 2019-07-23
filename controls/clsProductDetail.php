@@ -17,21 +17,9 @@ class prodDetails
 		$row = $res->fetch_array();	
 		return $row[0];
 	}
-<<<<<<< HEAD
 	public function showAllProduct()	{
 		$mysqli = new mysqli(SERVERNAME, USERNAME, PASSWORD, DATABASE);
 		$sql = "SELECT * FROM `product`";
-=======
-	public function updateProduct($prodName, $prodPrice, $prodModal, $prodSpec, $pid)
-	{
-		$mysqli = new mysqli(SERVERNAME, USERNAME, PASSWORD, DATABASE);
-		$sql = "UPDATE `product` SET `prodName`='$prodName',`prodPrice`='$prodPrice',`prodModal`='$prodModal',`prodSpec`='$prodSpec' WHERE `id`='$pid'";
-		return $mysqli->query($sql);
-	}
-	public function showProdByID($pid)	{
-		$mysqli = new mysqli(SERVERNAME, USERNAME, PASSWORD, DATABASE);
-		$sql = "SELECT * FROM `product` WHERE `id`='$pid'";
->>>>>>> suraj
 		return $res =  $mysqli->query($sql);
 	}
 }
