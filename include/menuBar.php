@@ -12,6 +12,7 @@
 <ul class="nav navbar-nav">
 <li><a href="login.php">Login</a></li>
 <li><a href="signup.php">Signup</a></li>
+<li><a href="contact.php">Contact</a></li>
 </ul>
 </div>
 </div>
