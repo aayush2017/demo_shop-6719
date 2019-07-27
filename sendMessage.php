@@ -7,17 +7,19 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require 'autoload.php';
 
-$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+
 
 function sendMailToMe() {
 	try {
+
+	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 	//Server settings
-	// $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+	$mail->SMTPDebug = 2;                                 // Enable verbose debug output
 	$mail->isSMTP();                                      // Set mailer to use SMTP
-	$mail->Host = 'mail.arenagurgaon.com';  // Specify main and backup SMTP servers
+	$mail->Host = '';  // Specify main and backup SMTP servers
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'aayush.jaiswal@arenagurgaon.com';                 // SMTP username
-	$mail->Password = 'jaiswal88@';                           // SMTP password
+	$mail->Username = '';                 // SMTP username
+	$mail->Password = '';                           // SMTP password
 	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 	$mail->Port = 25;                                    // TCP port to connect to
 
@@ -55,13 +57,14 @@ function sendMailToMe() {
 
 function sendMailToUser() {
 	try {
+	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 	//Server settings
-	// $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+	$mail->SMTPDebug = 2;                                 // Enable verbose debug output
 	$mail->isSMTP();                                      // Set mailer to use SMTP
-	$mail->Host = 'mail.arenagurgaon.com';  // Specify main and backup SMTP servers
+	$mail->Host = '';  // Specify main and backup SMTP servers
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'aayush.jaiswal@arenagurgaon.com';                 // SMTP username
-	$mail->Password = 'jaiswal88@';                           // SMTP password
+	$mail->Username = '';                 // SMTP username
+	$mail->Password = '';                           // SMTP password
 	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 	$mail->Port = 25;                                    // TCP port to connect to
 
